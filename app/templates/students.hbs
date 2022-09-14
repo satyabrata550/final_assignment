@@ -1,0 +1,28 @@
+<div class="center">
+  <h2 class="centerPage">Welcome to Exam: All the Best</h2>
+
+  {{#if this.evaluationNeeded}}
+        {{#each this.formData.questionList as |question index|}}
+          <div class="centerPage">
+             <span class="question"> {{question.number1}}</span>
+             <span class="question"> {{question.operator}}</span>
+             <span class="question"> {{question.number2}}</span>
+             <span class="question"> =</span>
+             <input class="question"  {{on "change" (fn this.handleInput question.number1 question.operator question.number2)}}/>
+          </div>
+       {{/each}}
+       <div class="centerPage">
+           <input type="submit" {{on "click" (fn this.checkScore)}}/>
+       </div>
+  {{else}}
+       <div class="centerPage">
+           Congratulation you scored {{this.score}}  out of {{this.total}}
+       </div>
+       <div class="centerPage">
+           <input type="submit" value="Try Again" {{on "click" (fn this.tryAgain)}}/>
+       </div>
+  {{/if}}
+ 
+    <div class="centerPage "><LinkTo @route="index" class="button">Teacher</LinkTo></div>
+</div>
+

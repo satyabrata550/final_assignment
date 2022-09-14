@@ -1,0 +1,37 @@
+
+
+ <div className="form">
+     <form name="details-form" {{on "submit" this.add}}>
+      <label >1. Number of Questions:</label>
+      <input type="text" id="No_Of_Questions"  name="No_Of_Questions" {{on "change" this.handleInput}} required><br>
+      <label for="No_Of_Questions">2. Type of Questions:</label><br>
+       <div className="input-container">
+          <input type="checkbox" id="level1" name="level1" {{on "change" this.handleInput}} value="Addition">
+          <label for="level1">Addition</label><br>
+       </div>
+       <div className="input-container">
+          <input type="checkbox" id="level2" name="level2" {{on "change" this.handleInput}} value="Subtraction">
+          <label for="level2">Subtraction</label><br>
+       </div>
+       <div className="input-container">
+          <input type="checkbox" id="level3" name="level3" {{on "change" this.handleInput}} value="Multiplication">
+          <label for="level3">Multiplication</label><br><br>
+       </div>
+       <label >3. Difficulty:</label><br>
+       <div className="input-container">
+          <input type="radio" id="easy" name="difficulty_level"  {{on "change" this.handleInput}} value="easy">
+          <label for="easy">Easy</label><br>
+       </div>
+       <div className="input-container">
+          <input type="radio" id="medium" name="difficulty_level" {{on "change" this.handleInput}} value="medium">
+          <label for="medium">Medium</label><br>
+       </div>
+       <div className="input-container">
+           <input type="radio" id="hard" name="difficulty_level" {{on "change" this.handleInput}} value="hard">
+           <label for="hard">Hard</label><br>
+       </div>
+       <div className="button-container">
+           <input type="submit"/>
+       </div>
+     </form>
+</div>
